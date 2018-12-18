@@ -41,8 +41,7 @@ patch, minor, major, prepatch, preminor, premajor, prerelease.
         )
 
         content = self.poetry.file.read()
-        poetry_content = content["tool"]["poetry"]
-        poetry_content["version"] = version.text
+        content["tool"]["poetry"]["version"] = version.text
 
         self.poetry.file.write(content)
 
